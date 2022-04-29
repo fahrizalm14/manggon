@@ -1,9 +1,18 @@
 import express, { Express, Router } from 'express';
 import * as http from 'http';
 
+/**
+ * @class App
+ * @description Membuat server baru dengan parameter option
+ * @param option.port {Number} - Port yang akan digunakan
+ * @param option.handler {Array} - Array handler
+ * @param option.middleware {Array} - Array middleware
+ * @param option.notFoundMessage {Object} - Message untuk not found
+ */
 export class App {
   private readonly app: Express = express();
   private server: http.Server | undefined;
+
   constructor(
     private readonly option: {
       port: number;
@@ -23,12 +32,18 @@ export class App {
     this.initRoutes();
   }
 
+  /**
+   * Start the server and listen on the given port
+   */
   public async run(): Promise<void> {
     this.server = this.app.listen(this.option.port, () => {
       console.log(`Server run on port: ${this.option.port}`);
     });
   }
 
+  /**
+   * Memberhentikan server
+   */
   public async stop(): Promise<void> {
     this.server?.close();
   }

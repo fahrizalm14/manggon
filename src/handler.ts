@@ -1,9 +1,24 @@
 import { NextFunction, Request, Response, Router } from 'express';
 
+/**
+ * @class Handler
+ * @description Membuat handler baru
+ * @param path {string} - Endpoint utama dari handler
+ * @param _child.function {function} - Function untuk router
+ * @param _child.method {string} -  Contoh: "post", "get", "put", "delete"
+ * @param _child.childPath {string} - Contoh: "/user/:id"
+ *
+ */
 export class Handler {
   public router = Router();
   private child: {
     childPath: string;
+    /**
+     *
+     * @param req {Request} - Request dari express
+     * @param res {Response} - Response dari express
+     * @param next {NextFunction} - Next function dari express
+     */
     function(req: Request, res: Response, next?: NextFunction): Promise<void>;
     method: string;
   }[];
