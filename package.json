@@ -1,0 +1,45 @@
+{
+  "name": "manggon",
+  "version": "1.0.0",
+  "description": "Simple Backend Framework",
+  "repository": "https://github.com/erzetid/manggon",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint . --ext .ts",
+    "dev": "nodemon src/main.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "framework",
+    "server",
+    "express"
+  ],
+  "author": "Muhammad Andri Fahrizal",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^27.4.0",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.9.1",
+    "@typescript-eslint/parser": "^5.9.1",
+    "babel-loader": "^8.2.3",
+    "eslint": "^8.6.0",
+    "jest": "^27.4.7",
+    "supertest": "^6.2.3",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
